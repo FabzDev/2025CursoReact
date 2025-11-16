@@ -7,7 +7,8 @@ import './style.css'
 // import './bases/07.1-tarea-useState'
 // import './data/heroes.data'
 // import './bases/08-import-export'
-import './bases/09-promises'
+// import './bases/09-promises'
+import './bases/10-fetch-api'
 
 // import { getHeroesByOwner } from './bases/08-import-export';
 // import { Owner } from './data/heroes.data';
