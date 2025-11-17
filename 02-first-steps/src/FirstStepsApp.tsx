@@ -1,25 +1,30 @@
+import type { CSSProperties } from "react";
+
+const firstName = "Fabio";
+const lastName = "Escobar";
+const favGames = ["Ragnarok", "TESO", "Elder Ring"];
+const activo = true;
+const address = {
+  zipcode: "40202",
+  country: "USA",
+};
+const addressStyles: CSSProperties = {
+  backgroundColor: "#f2d4a1",
+  padding: "10px",
+  borderRadius: "10px",
+};
 
 export function FirstStepsApp() {
-    const firstName = 'Fabio';
-    const lastName = 'Escobar';
-    const favGames = ['Ragnarok','TESO','Elder Ring'];
-    const activo = true;
-    const address = {
-        zipcode: '40202',
-        country: 'USA'
-    }
-    
-    return (
-        <>
-        <h1>{firstName}</h1>
-        <h1>{lastName}</h1>
+  return (
+    <>
+      <h1>{firstName}</h1>
+      <h1>{lastName}</h1>
 
-        <p>{favGames.join(', ')}</p>
+      <p>{favGames.join(", ")}</p>
 
-        <h1>{activo ? 'Activo' : 'Inactivo'}</h1>
+      <h1>{activo ? "Activo" : "Inactivo"}</h1>
 
-        <p>{JSON.stringify(address)}</p>
-
-        </>
-    )
+      <p style={addressStyles}>{JSON.stringify(address)}</p>
+    </>
+  );
 }
