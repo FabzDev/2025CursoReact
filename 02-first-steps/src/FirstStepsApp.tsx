@@ -1,15 +1,25 @@
 
 export function FirstStepsApp() {
+    const firstName = 'Fabio';
+    const lastName = 'Escobar';
+    const favGames = ['Ragnarok','TESO','Elder Ring'];
+    const activo = true;
+    const address = {
+        zipcode: '40202',
+        country: 'USA'
+    }
+    
     return (
         <>
-        <h1>Hola Mundo</h1>
-        <p>Esto es un párrafo</p>
+        <h1>{firstName}</h1>
+        <h1>{lastName}</h1>
 
-        <button>Click me!!</button>
+        <p>{favGames.join(', ')}</p>
 
-        <div>
-            <h2>Hola dentro de un Div</h2>
-        </div>
+        <h1>{activo ? 'Activo' : 'Inactivo'}</h1>
+
+        <p>{JSON.stringify(address)}</p>
+
         </>
     )
 }
