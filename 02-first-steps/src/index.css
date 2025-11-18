@@ -1,0 +1,95 @@
+/* --------------------------------------------
+   TEMA OSCURO GLOBAL
+--------------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0f;
+  color: #e3e3e7;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------
+   TIPOGRAFÍA GENERAL
+--------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin: 0.4rem 0;
+  color: #f1f1f3;
+}
+
+p {
+  margin: 0.5rem 0;
+  color: #b0b0b5;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------
+   CONTENEDOR GENERAL (solo usando body)
+--------------------------------------------- */
+body {
+  padding: 2rem;
+  max-width: 750px;
+  margin: auto;
+}
+
+/* --------------------------------------------
+   BLOQUES ESTÉTICOS AUTOMÁTICOS
+--------------------------------------------- */
+
+/* Si usas un <h1> seguido de otro <h1> */
+h1 + h1 {
+  color: #cfcfe5;
+  opacity: 0.85;
+}
+
+/* El párrafo que contiene lista de juegos */
+p:first-of-type {
+  font-size: 1rem;
+  color: #ccccd6;
+}
+
+/* Párrafo que contiene el JSON */
+p:last-of-type {
+  background: #151518;
+  padding: 1rem;
+  border-left: 3px solid #6366f1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #a8a8b3;
+  overflow-wrap: break-word;
+}
+
+/* --------------------------------------------
+   EFECTO "Activo / Inactivo"
+--------------------------------------------- */
+h1:nth-of-type(3) {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+h1:nth-of-type(3):contains("Activo") {
+  color: #4ade80; /* verde */
+}
+
+h1:nth-of-type(3):contains("Inactivo") {
+  color: #ef4444; /* rojo */
+}
+
+/* Nota: :contains() funciona en la mayoría de motores modernos,
+   si no, puedo darte alternativa.
+*/
+
+/* --------------------------------------------
+   ANIMACIÓN SUAVE PARA TODO
+--------------------------------------------- */
+body, h1, p {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

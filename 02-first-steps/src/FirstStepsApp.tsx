@@ -1,30 +1,12 @@
-import type { CSSProperties } from "react";
-
-const firstName = "Fabio";
-const lastName = "Escobar";
-const favGames = ["Ragnarok", "TESO", "Elder Ring"];
-const activo = true;
-const address = {
-  zipcode: "40202",
-  country: "USA",
-};
-const addressStyles: CSSProperties = {
-  backgroundColor: "#f2d4a1",
-  padding: "10px",
-  borderRadius: "10px",
-};
+import { ItemCounter } from "./shopping-cart/ItemCounter";
 
 export function FirstStepsApp() {
   return (
     <>
-      <h1>{firstName}</h1>
-      <h1>{lastName}</h1>
-
-      <p>{favGames.join(", ")}</p>
-
-      <h1>{activo ? "Activo" : "Inactivo"}</h1>
-
-      <p style={addressStyles}>{JSON.stringify(address)}</p>
+      <h1>Carrito de compras</h1>
+      <ItemCounter productName="Nintendo Switch" quantity={1}/>
+      <ItemCounter productName="Pro Controller" quantity={2}/>
+      <ItemCounter productName="Super Smash" quantity={1}/>
     </>
   );
 }
