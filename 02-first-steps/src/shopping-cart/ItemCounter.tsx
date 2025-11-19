@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./ItemCounter.css"
+
 interface props {
   productName: string;
   quantity?: number;
@@ -16,23 +18,11 @@ export const ItemCounter = ({ productName, quantity = 1 }: props) => {
   // const onClickHandler = () => console.log(`click on ${productName}`);
 
   return (
-    <section
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        width: "350px",
-        justifyContent: "space-between",
-      }}
-    >
-      <h2>{productName}</h2>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "15px",
-        }}
-      >
+    <section className="item-section">
+      <h2 style={{
+            color: count < 1 ? "red" : "#fefefe"
+        }}>{productName}</h2>
+      <div className="item-row">
         <button onClick={handelSubtract}>-1</button>
         <span>{count}</span>
         <button onClick={handleSum}>+1</button>

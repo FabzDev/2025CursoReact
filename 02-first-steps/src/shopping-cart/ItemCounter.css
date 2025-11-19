@@ -1,0 +1,14 @@
+.item-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 350px;
+  justify-content: space-between;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
