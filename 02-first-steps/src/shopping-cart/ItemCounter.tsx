@@ -12,7 +12,7 @@ export const ItemCounter = ({ productName, quantity = 1 }: props) => {
 
   const handleSum = () => setCount(count + 1);
   const handelSubtract = () => {
-    if (count === 0) return; 
+    if (count === 1) return; 
     setCount(count - 1)
 }
   // const onClickHandler = () => console.log(`click on ${productName}`);
@@ -20,7 +20,7 @@ export const ItemCounter = ({ productName, quantity = 1 }: props) => {
   return (
     <section className="item-section">
       <h2 style={{
-            color: count < 1 ? "red" : "#fefefe"
+            color: count == 1 ? "red" : "#fefefe"
         }}>{productName}</h2>
       <div className="item-row">
         <button onClick={handelSubtract}>-1</button>
