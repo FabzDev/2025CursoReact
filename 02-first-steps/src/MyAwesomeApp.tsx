@@ -16,15 +16,15 @@ const addressStyles: CSSProperties = {
 
 export function MyAwesomeApp() {
   return (
-    <>
+    <div data-testid="div-app" >
       <h1>{firstName}</h1>
-      <h1>{lastName}</h1>
+      <h2 data-testid="last-name-title">{lastName}</h2>
 
       <p>{favGames.join(", ")}</p>
 
       <h1>{activo ? "Activo" : "Inactivo"}</h1>
 
       <p style={addressStyles}>{JSON.stringify(address)}</p>
-    </>
+    </div>
   );
 }

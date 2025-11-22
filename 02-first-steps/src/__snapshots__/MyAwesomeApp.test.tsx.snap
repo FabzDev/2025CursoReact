@@ -1,0 +1,55 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MyAwesomeApp > Should match snapshot - Using {container} 1`] = `
+<div>
+  <div
+    data-testid="div-app"
+  >
+    <h1>
+      Fabio
+    </h1>
+    <h2
+      data-testid="last-name-title"
+    >
+      Escobar
+    </h2>
+    <p>
+      Ragnarok, TESO, Elder Ring
+    </p>
+    <h1>
+      Activo
+    </h1>
+    <p
+      style="background-color: rgb(242, 212, 161); padding: 10px; border-radius: 10px;"
+    >
+      {"zipcode":"40202","country":"USA"}
+    </p>
+  </div>
+</div>
+`;
+
+exports[`MyAwesomeApp > Should match snapshot - Using Screen 1`] = `Promise {}`;
+
+exports[`MyAwesomeApp > Should match snapshot 1`] = `
+<div>
+  <h1>
+    Fabio
+  </h1>
+  <h2
+    data-testid="last-name-title"
+  >
+    Escobar
+  </h2>
+  <p>
+    Ragnarok, TESO, Elder Ring
+  </p>
+  <h1>
+    Activo
+  </h1>
+  <p
+    style="background-color: rgb(242, 212, 161); padding: 10px; border-radius: 10px;"
+  >
+    {"zipcode":"40202","country":"USA"}
+  </p>
+</div>
+`;
