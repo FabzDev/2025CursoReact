@@ -50,3 +50,14 @@
 	
 	//Esperar argumentos específicos
 		expect(mockItemCounter).toBeCalledTimes(4);
+		
+		// inside describe:
+		afterEach(()=>{
+			vi.clearAllMocks();
+		
+		expect(mockItemCounter).toHaveBeenCalledWith(
+		{
+			productName: "Pro Controller",
+			quantity: 2,
+		});
+	
