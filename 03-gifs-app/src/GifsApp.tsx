@@ -14,7 +14,7 @@ export const GifsApp = () => {
       <SearchBar placeholder="Buscar Gifs" buttonTitle="Buscar Gifs"/>
 
       {/* Previous Gifs */}
-      <PreviousSearches title="Busquedas previas" gifs={["Eren Jaeger", "John Snow", "Inuyasha"]} />
+      <PreviousSearches title="Busquedas previas" gifs={["Alejandro","Eren Jaeger", "John Snow", "Inuyasha"]} />
 
       {/* GifList */}
       <GifList gifs={mockGifs}/>

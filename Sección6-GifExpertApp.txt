@@ -1,63 +1,6 @@
-//Sección 5 - Pruebas automáticas - Unit testing
-	//GENERAL
-	describe("nombre del describe", ()=>{
-		test("nombre del test"algo que contiene
-			expect(h1.innerHTML)toBe("algo");
-			expect(h1.innerHTML)toContain("algo que contiene");
-			expect(h1.innerHTML)toContainEqual("algo exacto");
-		}
-		}
-	}
-	const { container } = render(<MyAwesomeApp />)
+//Sección 6 - Sección 6 - GifExpertApp - Aplicación	
+	//Pensemos en componentes
+	{description && <p>{description}</p>}
+	{placeholder ? <input type="text" placeholder={placeholder} /> : <input type="text" />}
 	
-	
-	//Pruebas sobre componentes de React
-		container.innerHTML
-		screen
-		screen.debug();
-		*Container: estado inicial cuando se renderiza el componente
-		*Screen: estado en tiempo real, por ejemplo cuando se activa un evento
-
-	//Buscar elementos en el componente renderizado
-		const h1 = container.querySelector('h1');
-		
-		<h1 data-testid="first-name-title">{firstName}</h1> (en el JSX)
-		const h1 = screen.getByTestId("first-name-title")
-		
-	//Evaluar "snapshots"
-		expect(container).toMatchSnapshot()
-	
-	//Pruebas en el componente ItemCounter
-		expect(screen.getByText("Test item")).toBeDefined();
-		expect(screen.getByText("Test item")).not.toBeNull();
-		expect(screen.getByText(quantity)).not.toBeNull();
-
-	//Disparar eventos
-		fireEvent.click(buttonAdd);
-		expect(screen.getByText('2')).toBeDefined();
-	
-	//Comprobar estilos
-		expect(productNameElement.style.color).toBe('rgb(254, 254, 254)');
-	
-	//Componentes fictícios - Mock Components
-		const mockItemCounter = vi.fn((_props1: unknown) => {
-			return <div data-testid="ItemCounter" />;
-		});
-	
-		vi.mock("./shopping-cart/ItemCounter", ()=>({
-			ItemCounter: () => (<div data-testid="ItemCounter">Item Counter</div>)
-		}))
-	
-	//Esperar argumentos específicos
-		expect(mockItemCounter).toBeCalledTimes(4);
-		
-		// inside describe:
-		afterEach(()=>{
-			vi.clearAllMocks();
-		
-		expect(mockItemCounter).toHaveBeenCalledWith(
-		{
-			productName: "Pro Controller",
-			quantity: 2,
-		});
 	
