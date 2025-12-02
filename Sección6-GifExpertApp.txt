@@ -3,4 +3,17 @@
 	{description && <p>{description}</p>}
 	{placeholder ? <input type="text" placeholder={placeholder} /> : <input type="text" />}
 	
+	//Manejo de estado - Búsquedas previas
+	Comunicacion entre componenter Hijo -> Padre: Lo que hacen los componentes hijos es mandar a llamar una funcion del componente padre, y eso vuelve a realizar el proceso de actualización y demas.
+	
+	return (
+    <div className="search-container">
+      <input onKeyUp={ (e) => { e.key == "Enter" ? handleNewTerm(document.querySelector("input")?.value || "Fabio") : "Error";} }
+        type="text"
+        placeholder={placeholder}
+      />
+      <button onClick={() => handleNewTerm(document.querySelector("input")?.value || "Fabio")}>{buttonTitle}</button>
+    </div>
+  );
+	
 	
