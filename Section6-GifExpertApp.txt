@@ -1,0 +1,55 @@
+//Sección 6 - Sección 6 - GifExpertApp - Aplicación	
+	//Pensemos en componentes
+	{description && <p>{description}</p>}
+	{placeholder ? <input type="text" placeholder={placeholder} /> : <input type="text" />}
+	
+	//Manejo de estado - Búsquedas previas
+	Comunicacion entre componenter Hijo -> Padre: Lo que hacen los componentes hijos es mandar a llamar una funcion del componente padre, y eso vuelve a realizar el proceso de actualización y demas.
+	
+	return (
+    <div className="search-container">
+      <input onKeyUp={ (e) => { e.key == "Enter" ? handleNewTerm(document.querySelector("input")?.value || "Fabio") : "Error";} }
+        type="text"
+        placeholder={placeholder}
+      />
+      <button onClick={() => handleNewTerm(document.querySelector("input")?.value || "Fabio")}>{buttonTitle}</button>
+    </div>
+	);
+	
+	//useEffect - Debounce
+	var term -> textField -> onChange -> [ (e) => setTerm(e.target.value) ] 
+		-> handleTextFieldEvent
+		 OR
+		-> useEffect( () => {
+			//logic
+		}, [term, setTerm])
+	
+	//Tarea - Ver busquedas previas
+	setSearchedQueries([newQuery, ...searchedQueries].splice(0,8));
+	
+	//Obtener Gifs mediandte peticion HTTP
+	const response = await axios.get<GiphyResponse>(
+    "https://api.giphy.com/v1/gifs/search",
+		{
+		  params: {
+			q: query,
+			limit: 12,
+			lang: "en",
+			api_key: "NyiyeQOAdV6Tyf0gNAUc9ZzJ6lPcE1O6",
+		  },
+		}
+	);
+	
+	const [gifList, setGifList] = useState<Gif[]>(mockGifs);
+	
+//Variables de entorno
+VITE_GIPHY_API_KEY=NyiyeQOAdV6Tyf0gNAUc9ZzJ6lPcE1O6
+
+export const GetGifResponse = async (query: string) => {
+  const response = await giphyApi<GiphyResponse>("/search", {
+    params: {
+      q: query,
+      limit: 12
+    },
+  });
+	
