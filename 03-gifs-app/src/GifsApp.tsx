@@ -7,6 +7,7 @@ import { CustomHeader } from "./shared/components/CustomHeader";
 import { SearchBar } from "./shared/components/SearchBar";
 
 export const GifsApp = () => {
+
   const [searchedQueries, setSearchedQueries] = useState([
     "alejandro",
     "eren Jaeger",
@@ -17,13 +18,15 @@ export const GifsApp = () => {
     console.log(term);
   };
 
-  const handleNewQuery = (query: string) => {
+  const handleGifSearch = (query: string) => {
     const newQuery = query.toLocaleLowerCase().trim();
+
     if (newQuery.length === 0) return;
-    !searchedQueries.find((q) => q == newQuery) &&
-      setSearchedQueries([newQuery, ...searchedQueries].splice(0,8));
+    
+    if (searchedQueries.includes(query)) return;
+
+    setSearchedQueries([newQuery, ...searchedQueries].splice(0,8));
   };
-  console.log(searchedQueries);
 
   return (
     <>
@@ -37,7 +40,7 @@ export const GifsApp = () => {
       <SearchBar
         placeholder="Buscar Gifs"
         buttonTitle="Buscar Gifs"
-        onGifQuerySend={(value) => handleNewQuery(value)}
+        onGifQuerySend={(value) => handleGifSearch(value)}
       />
 
       {/* Previous Gifs */}
