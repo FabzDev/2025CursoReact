@@ -2,15 +2,13 @@ import { useState } from "react";
 
 import { GifList } from "./gifs/components/GifList";
 import { PreviousSearches } from "./gifs/components/PreviousSearches";
-import { mockGifs } from "./mock-data/gifs-mock";
 import { CustomHeader } from "./shared/components/CustomHeader";
 import { SearchBar } from "./shared/components/SearchBar";
 import { GetGifResponse } from "./actions/get-gif-response.action";
 import type { Gif } from "./interfaces/gif.interface";
 
 export const GifsApp = () => {
-
-  const [gifList, setGifList] = useState<Gif[]>(mockGifs);
+  const [gifList, setGifList] = useState<Gif[]>([]);
 
   const [searchedQueries, setSearchedQueries] = useState<string[]>([]);
 
@@ -22,17 +20,15 @@ export const GifsApp = () => {
     const newQuery = query.toLocaleLowerCase().trim();
 
     if (newQuery.length === 0) return;
-    
+
     if (searchedQueries.includes(query)) return;
 
-    setSearchedQueries([newQuery, ...searchedQueries].splice(0,8));
+    setSearchedQueries([newQuery, ...searchedQueries].splice(0, 8));
 
     const resultGifs = await GetGifResponse(query);
 
-    setGifList(resultGifs)
-
+    setGifList(resultGifs);
   };
-
 
   return (
     <>
@@ -50,11 +46,11 @@ export const GifsApp = () => {
       />
 
       {/* Previous Gifs */}
-      {(searchedQueries.length > 0) && <PreviousSearches
+      <PreviousSearches
         title="Busquedas previas"
         terms={searchedQueries}
         onTermClicked={(term) => handleTermClicked(term)}
-      />}
+      />
 
       {/* GifList */}
       <GifList gifs={gifList} />
