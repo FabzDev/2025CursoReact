@@ -42,8 +42,18 @@
 	
 	const [gifList, setGifList] = useState<Gif[]>(mockGifs);
 	
+	
 //Variables de entorno
 VITE_GIPHY_API_KEY=NyiyeQOAdV6Tyf0gNAUc9ZzJ6lPcE1O6
+
+export const giphyApi = axios.create({
+    baseURL: 'https://api.giphy.com/v1/gifs',
+    params: {
+        lang: "en",
+        api_key: import.meta.env.VITE_GIPHY_API_KEY        
+    }
+})
+
 
 export const GetGifResponse = async (query: string) => {
   const response = await giphyApi<GiphyResponse>("/search", {
@@ -52,4 +62,6 @@ export const GetGifResponse = async (query: string) => {
       limit: 12
     },
   });
+  
+  
 	
